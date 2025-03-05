@@ -336,6 +336,10 @@ bool esOtro(char* str)
     return false;
 }
 
+
+
+
+
 // check for an integer value
 bool isInteger(char* str)
 {
@@ -475,6 +479,7 @@ struct tablasymbolos
     float Flotante;
 };
 
+char siguiente[MAX_LENGTH] = "";
 
 struct tablasymbolos tablita[200];
 int i =0;
@@ -499,8 +504,4 @@ int main()
         printf(" \n");
     
     }
-
-
-
-
 }

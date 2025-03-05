@@ -3,3 +3,22 @@ while ( a != b )
 {
     printf( " uwu " )
 }
+
+
+int, float, id, corder, corizq, parder, parizq, puntocoma , while, if, condicion, impresion, lectura, llaveder, llaveizq, igual, oparit, string
+
+
+GRAMATICA
+
+int id igual (numero|id oparit numero|id) puntocoma
+
+float id igual (numero|id oparit numero|id) (oparit numero)  idpuntocoma  //Esta mal
+
+string id igual texto puntocoma
+
+texto - comilla texto comilla
+
+impresion parizq comilla texto comilla parder puntocoma
+impresion parizq numero parder puntocoma
+
+lectura parizq texto parder
