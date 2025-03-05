@@ -486,7 +486,7 @@ int main()
     FILE *fptr;
 
     // Open a file in read mode
-    fptr = fopen("leer.txt", "r");
+    fptr = fopen("filename.txt", "r");
 
     char leido[TEXTOLARGO];
 
@@ -499,7 +499,6 @@ int main()
         printf(" \n");
     
     }
-
 
 
 

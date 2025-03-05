@@ -1,1 +1,5 @@
-uwu
+int a = b + c;
+while ( a != b )
+{
+    printf( " uwu " )
+}
