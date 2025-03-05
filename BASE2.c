@@ -10,6 +10,8 @@
 #define MAX_LENGTH 100
 #define TEXTOLARGO 600
 
+
+
 // this function check for a delimiter(it is a piece of data
 // that seprated it from other) to peform some specif case
 // on it
@@ -26,6 +28,13 @@ bool esOperador(char chr)
     return (chr == '+' || chr == '-' || chr == '*'
             || chr == '/'
             || chr == '=');
+}
+
+bool Oplogico(char chr)
+{
+    return (chr == '>' || chr == '<' || chr == '=='
+            || chr == '&&'
+            || chr == '||');
 }
 
 // this function check for an valid identifier
@@ -63,70 +72,7 @@ bool isKeyword(char* str)
 */
 
 
-bool esMayor(char* str)
-{
-    const char* keywords[] = { ">"};
-    for (int i = 0;i < sizeof(keywords) / sizeof(keywords[0]); i++) 
-    {
-        if (strcmp(str, keywords[i]) == 0) 
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
-bool esMenor(char* str)
-{
-    const char* keywords[] = { "<"};
-    for (int i = 0;i < sizeof(keywords) / sizeof(keywords[0]); i++) 
-    {
-        if (strcmp(str, keywords[i]) == 0) 
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool esDiferente(char* str)
-{
-    const char* keywords[] = { "!=" };
-    for (int i = 0;i < sizeof(keywords) / sizeof(keywords[0]); i++) 
-    {
-        if (strcmp(str, keywords[i]) == 0) 
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool esO(char* str)
-{
-    const char* keywords[] = {"||" };
-    for (int i = 0;i < sizeof(keywords) / sizeof(keywords[0]); i++) 
-    {
-        if (strcmp(str, keywords[i]) == 0) 
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool esY(char* str)
-{
-    const char* keywords[] = {  "&&" };
-    for (int i = 0;i < sizeof(keywords) / sizeof(keywords[0]); i++) 
-    {
-        if (strcmp(str, keywords[i]) == 0) 
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 bool esComillas(char* str)
 {
@@ -378,8 +324,7 @@ int lexicalAnalyzer(char* input)
 
         if (esDelimitador(input[right]) && left == right) {
             if (esOperador(input[right]))
-                printf("Token: Operator, Value: %c\n",
-                       input[right]);
+                printf("Token: Operator, Value: %c\n",input[right]);
 
             right++;
             left = right;
@@ -391,9 +336,11 @@ int lexicalAnalyzer(char* input)
 
             if (esCiclo(subStr))
                 printf("Token: Ciclo, Value: %s\n",subStr);
+                siguiente ="("
 
             else if (esMayor(subStr))
                 printf("Token: Mayor, Value: %s\n",subStr);
+                siguiente = "numero"
 
             else if (esMenor(subStr))
                 printf("Token: Menor, Value: %s\n",subStr);
